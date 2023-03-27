@@ -1,0 +1,400 @@
+CURSO DE ENGENHARIA DE SOFTWARE - UNIEVANGELICA
+DISCIPLINA DE PROGRAMAÇÃO WEB
+DEV: LUCAS MORAES AGUIAR - 2012148
+26/03/2023
+
+ATIVIDADE PRATICA S4:
+
+ARQUIVO 01:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Horários da Academia - Segunda-feira</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="center-align">Horários da Academia - Segunda-feira</h1>
+		
+		<h2>Horários Disponíveis:</h2>
+		<ul class="collection">
+			<li class="collection-item">7:00 - 8:00 - Treino Funcional</li>
+			<li class="collection-item">9:00 - 10:00 - Yoga</li>
+			<li class="collection-item">12:00 - 13:00 - Musculação</li>
+		</ul>
+		
+		<p>Para reservar seu horário, ligue para (xx) xxxxx-xxxx ou clique <a href="http://suaacademia.com.br/reservas">aqui</a> para reservar online.</p>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
+
+
+ARQUIVO 02:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Divisão de Horários - Academia XYZ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Academia XYZ</a>
+      </div>
+    </nav>
+    <div class="container">
+      <h1 class="center-align">Divisão de Horários</h1>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Dias da semana</legend>
+          <p>
+            <label>
+              <input type="checkbox" name="dia" value="segunda">
+              <span>Segunda-feira</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" name="dia" value="terca">
+              <span>Terça-feira</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" name="dia" value="quarta">
+              <span>Quarta-feira</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" name="dia" value="quinta">
+              <span>Quinta-feira</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" name="dia" value="sexta">
+              <span>Sexta-feira</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" name="dia" value="sabado">
+              <span>Sábado</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" name="dia" value="domingo">
+              <span>Domingo</span>
+            </label>
+          </p>
+        </fieldset>
+        <br>
+        <fieldset>
+          <legend>Horários disponíveis</legend>
+          <p>
+            <label>
+              <input type="radio" name="horario" value="manha">
+              <span>Manhã</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="horario" value="tarde">
+              <span>Tarde</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="horario" value="noite">
+              <span>Noite</span>
+            </label>
+          </p>
+        </fieldset>
+        <br>
+        <div class="input-field">
+          <input type="text" id="nome" name="nome" required>
+          <label for="nome">Nome</label>
+        </div>
+        <div class="input-field">
+          <input type="email" id="email" name="email" required>
+          <label for="email">E-mail</label>
+        </div>
+        <div class="input-field">
+          <input type="tel" id="telefone" name="telefone">
+          <label for="telefone">Telefone</label>
+        </div>
+        <div class="center-align">
+          <button class="btn waves-effect waves-light>
+          </body>
+          </html>
+          
+          
+          ARQUIVO 03:
+          
+          <!DOCTYPE html>
+<html>
+<head>
+	<title>Horários da Academia</title>
+	<!-- Importando o Materialize CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="center-align">Horários da Academia</h1>
+php
+Copy code
+	<div class="row">
+		<div class="col s12">
+			<table class="highlight responsive-table">
+				<caption>Horários das Aulas de Ginástica</caption>
+				<thead>
+					<tr>
+						<th>Horários</th>
+						<th>Segunda-feira</th>
+						<th>Terça-feira</th>
+						<th>Quarta-feira</th>
+						<th>Quinta-feira</th>
+						<th>Sexta-feira</th>
+						<th>Sábado</th>
+						<th>Domingo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>8h às 9h</td>
+						<td>X</td>
+						<td></td>
+						<td>X</td>
+						<td></td>
+						<td>X</td>
+						<td>X</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>10h às 11h</td>
+						<td></td>
+						<td>X</td>
+						<td></td>
+						<td>X</td>
+						<td></td>
+						<td>X</td>
+						<td>X</td>
+					</tr>
+					<tr>
+						<td>18h às 19h</td>
+						<td>X</td>
+						<td>X</td>
+						<td>X</td>
+						<td>X</td>
+						<td>X</td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+			<table class="highlight responsive-table">
+				<caption>Horários do Funcionamento da Academia</caption>
+				<thead>
+					<tr>
+						<th>Dia da semana</th>
+						<th>Horário de abertura</th>
+						<th>Horário de fechamento</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Segunda-feira</td>
+						<td>6h</td>
+						<td>22h</td>
+					</tr>
+					<tr>
+						<td>Terça-feira</td>
+						<td>6h</td>
+						<td>22h</td>
+					</tr>
+					<tr>
+						<td>Quarta-feira</td>
+						<td>6h</td>
+						<td>22h</td>
+					</tr>
+					<tr>
+						<td>Quinta-feira</td>
+						<td>6h</td>
+						<td>22h</td>
+					</tr>
+					<tr>
+						<td>Sexta-feira</td>
+						<td>6h</td>
+						<td>22h</td>
+					</tr>
+					<tr>
+						<td>Sábado</td>
+            <td>8h - 12h</td>
+	  </tr>
+	  <tr>
+			<td>Domingo</td>
+			<td>Fechado</td>
+      </tr>
+      <tr>
+       </body>
+</html>
+
+
+
+ARQUIVO 04:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Horários da Academia</title>
+	<!-- Incluindo o link do Materialize CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+	<!-- Adicionando a classe center-align para centralizar o título -->
+	<h1 class="center-align">Horários da Academia</h1>
+
+	<!-- Adicionando a classe striped para adicionar listras à tabela -->
+	<table class="striped">
+		<tr>
+			<th>Dia</th>
+			<th>Horários</th>
+		</tr>
+		<tr>
+			<td>Segunda-feira</td>
+			<td>6h - 8h, 12h - 14h, 18h - 22h</td>
+		</tr>
+		<tr>
+			<td>Terça-feira</td>
+			<td>6h - 8h, 12h - 14h, 18h - 22h</td>
+		</tr>
+		<tr>
+			<td>Quarta-feira</td>
+			<td>6h - 8h, 12h - 14h, 18h - 22h</td>
+		</tr>
+		<tr>
+			<td>Quinta-feira</td>
+			<td>6h - 8h, 12h - 14h, 18h - 22h</td>
+		</tr>
+		<tr>
+			<td>Sexta-feira</td>
+			<td>6h - 8h, 12h - 14h, 18h - 21h</td>
+		</tr>
+		<tr>
+			<td>Sábado</td>
+			<td>8h - 12h</td>
+		</tr>
+		<tr>
+			<td>Domingo</td>
+			<td>Fechado</td>
+		</tr>
+	</table>
+
+	<!-- Adicionando a classe row para criar uma nova linha -->
+	<div class="row">
+		<h2>Imagens da Academia</h2>
+		<p>Confira algumas imagens da nossa academia:</p>
+    <img src="academia1.jpg" alt="Academia" style="width:400px;height:300px;float:left;margin-right:20px;">
+<p>Academia com muitos aparelhos de musculação.</p>
+
+<img src="academia2.jpg" alt="Esteira" style="width:400px;height:300px;float:right;margin-left:20px;">
+<p>Esteiras modernas e confortáveis para sua atividade cardiovascular.</p>
+
+<img src="academia3.jpg" alt="Sala de aula" style="width:400px;height:300px;float:left;margin-right:20px;">
+<p>Sala de aula equipada para aulas coletivas.</p>
+
+<img src="academia4.jpg" alt="Piscina" style="width:400px;height:300px;float:right;margin-left:20px;">
+<p>Piscina com área para natação e hidroginástica.</p>
+</body>
+</html>
+
+
+ARQUIVO 05:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Horários da Academia</title>
+	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">Horários da Academia</a>
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="index.html">Home</a></li>
+					<li class="active"><a href="horarios.html">Horários</a></li>
+					<li><a href="treinos.html">Treinos</a></li>
+					<li><a href="contato.html">Contato</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<ul class="sidenav" id="mobile-demo">
+			<li><a href="index.html">Home</a></li>
+			<li class="active"><a href="horarios.html">Horários</a></li>
+			<li><a href="treinos.html">Treinos</a></li>
+			<li><a href="contato.html">Contato</a></li>
+		</ul>
+	</header>
+
+	<main>
+		<div class="container">
+			<h2>Horários de Funcionamento</h2>
+			<table class="striped">
+				<thead>
+					<tr>
+						<th>Dia</th>
+						<th>Horários</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Segunda-feira</td>
+						<td>6h - 8h, 12h - 14h, 18h - 22h</td>
+					</tr>
+					<tr>
+						<td>Terça-feira</td>
+						<td>6h - 8h, 12h - 14h, 18h - 22h</td>
+					</tr>
+					<tr>
+						<td>Quarta-feira</td>
+						<td>6h - 8h, 12h - 14h, 18h - 22h</td>
+					</tr>
+					<tr>
+						<td>Quinta-feira</td>
+						<td>6h - 8h, 12h - 14h, 18h - 22h</td>
+					</tr>
+					<tr>
+						<td>Sexta-feira</td>
+						<td>6h - 8h, 12h - 14h, 18h - 21h</td>
+					</tr>
+					<tr>
+						<td>Sábado</td>
+						<td>8h - 12h</td>
+					</tr>
+					<tr>
+						<td>Domingo</td>
+						<td>Fechado</td>
+					</tr>
+    <tr>
+     </body>
+</html>
