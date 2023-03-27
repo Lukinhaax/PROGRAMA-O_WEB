@@ -1,0 +1,228 @@
+CURSO DE ENGENHARIA DE SOFTWARE - UNIEVANGELICA
+DISCIPLINA DE PROGRAMAÇÃO WEB
+DEV: LUCAS MORAES AGUIAR - 2012148
+21/03/2023
+
+ATIVIDADE PRATICA S2:
+
+/* Estilos para o arquivo 1: ELEMENTOS DE TEXTO */
+
+/* Estilo para o título da página */
+h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Estilo para o subtítulo */
+h2 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+/* Estilo para a lista de horários */
+ul {
+  font-size: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Estilo para os itens da lista */
+li {
+  margin-bottom: 10px;
+}
+
+/* Estilo para o link de reservas */
+a {
+  color: #00f;
+}
+
+/* Estilo para o parágrafo */
+p {
+  font-size: 16px;
+}
+
+/* Estilos para o arquivo 2: FORMULÁRIO */
+
+/* Estilo para o título da página */
+h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Estilo para os campos do formulário */
+label {
+  display: block;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/* Estilo para os campos de entrada do formulário */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+}
+
+/* Estilo para o botão de enviar */
+input[type="submit"] {
+  font-size: 20px;
+  color: #fff;
+  background-color: #00f;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Estilo para o botão de limpar */
+input[type="reset"] {
+  font-size: 20px;
+  color: #000;
+  background-color: #ccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Estilos para o arquivo 3: TABELAS */
+
+/* Estilo para o título da página */
+h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Estilo para a tabela */
+table {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Estilo para o cabeçalho da tabela */
+th {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+  background-color: #f2f2f2;
+}
+
+/* Estilo para as células da tabela */
+td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Estilo para as células específicas da tabela */
+.first-table td:nth-child(1),
+.second-table td:nth-child(2),
+.third-table td:nth-child(3) {
+  background-color: #e6f9ff;
+  font-weight: bold;
+}
+
+/* Estilos para o arquivo 4 */
+
+/* Estilos para a tabela de horários */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #444;
+}
+
+/* Estilos para as imagens */
+img {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+/* Estilos para o texto das imagens */
+p {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Estilos para o arquivo 5 */
+
+/* Estilos para o cabeçalho */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Estilos para o conteúdo principal */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* Estilos para a tabela de horários */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #444;
+}
