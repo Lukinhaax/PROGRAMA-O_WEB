@@ -1,0 +1,339 @@
+CURSO DE ENGENHARIA DE SOFTWARE - UNIEVANGELICA
+DISCIPLINA DE PROGRAMAÇÃO WEB
+DEV: LUCAS MORAES AGUIAR - 2012148
+27/03/2023
+
+ARP 01:
+
+TELA DE CADASTRO DOS PACIENTES:
+
+import React, { useState } from "react";
+
+const CadastroPaciente = () => {
+  const [nome, setNome] = useState("");
+  const [dataNascimento, setDataNascimento] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [endereco, setEndereco] = useState("");
+  const [telefone, setTelefone] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // enviar dados para o servidor aqui
+  };
+
+  return (
+    <div>
+      <h2>Cadastro de Paciente</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Nome:
+          <input
+            type="text"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Data de Nascimento:
+          <input
+            type="date"
+            value={dataNascimento}
+            onChange={(e) => setDataNascimento(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          CPF:
+          <input
+            type="text"
+            value={cpf}
+            onChange={(e) => setCpf(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Endereço:
+          <input
+            type="text"
+            value={endereco}
+            onChange={(e) => setEndereco(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Telefone:
+          <input
+            type="text"
+            value={telefone}
+            onChange={(e) => setTelefone(e.target.value)}
+          />
+        </label>
+        <br />
+        <button type="submit">Cadastrar Paciente</button>
+      </form>
+    </div>
+  );
+};
+
+export default CadastroPaciente;
+
+
+
+TELA DE AGENDAMENTO:
+
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { Grid, Typography, Select, MenuItem } from '@material-ui/core';
+
+const AppointmentCalendar = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [selectedDoctor, setSelectedDoctor] = useState('');
+  const [selectedType, setSelectedType] = useState('');
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    setSelectedTime(null);
+  };
+
+  const handleTimeChange = (e) => {
+    setSelectedTime(e.target.value);
+  };
+
+  const handleDoctorChange = (e) => {
+    setSelectedDoctor(e.target.value);
+  };
+
+  const handleTypeChange = (e) => {
+    setSelectedType(e.target.value);
+  };
+
+  const disabledDates = [new Date(2022, 4, 1), new Date(2022, 4, 2), new Date(2022, 4, 3)]; // example disabled dates
+
+  return (
+    <Grid container spacing={3}>
+      <Grid item xs={12} sm={6}>
+        <Calendar
+          value={selectedDate}
+          onChange={handleDateChange}
+          minDate={new Date()}
+          maxDate={new Date(2023, 11, 31)}
+          tileDisabled={({ activeStartDate, date, view }) =>
+            view === 'month' &&
+            disabledDates.some(
+              (disabledDate) =>
+                date.getFullYear() === disabledDate.getFullYear() &&
+                date.getMonth() === disabledDate.getMonth() &&
+                date.getDate() === disabledDate.getDate()
+            )
+          }
+        />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Typography variant="h5" component="h2" gutterBottom>
+          Agendar Consulta
+        </Typography>
+        <Select value={selectedDoctor} onChange={handleDoctorChange} fullWidth>
+          <MenuItem value="">Selecione o médico</MenuItem>
+          <MenuItem value="Dr. João">Dr. João</MenuItem>
+          <MenuItem value="Dra. Maria">Dra. Maria</MenuItem>
+          <MenuItem value="Dr. José">Dr. José</MenuItem>
+        </Select>
+        <Select value={selectedType} onChange={handleTypeChange} fullWidth>
+          <MenuItem value="">Selecione o tipo de consulta</MenuItem>
+          <MenuItem value="Cardiologista">Cardiologista</MenuItem>
+          <MenuItem value="Dermatologista">Dermatologista</MenuItem>
+          <MenuItem value="Ginecologista">Ginecologista</MenuItem>
+        </Select>
+        {selectedDate && (
+          <Select value={selectedTime} onChange={handleTimeChange} fullWidth>
+            <MenuItem value="">Selecione o horário</MenuItem>
+            <MenuItem value="09:00">09:00</MenuItem>
+            <MenuItem value="10:00">10:00</MenuItem>
+            <MenuItem value="11:00">11:00</MenuItem>
+            <MenuItem value="14:00">14:00</MenuItem>
+            <MenuItem value="15:00">15:00</MenuItem>
+            };
+            
+            
+            
+            
+            TELA DE CONSULTA DOS PACIENTES
+            
+           import React, { useState } from 'react';
+
+const Pacientes = () => {
+  const [pacientes, setPacientes] = useState([
+    {
+      id: 1,
+      nome: 'João Silva',
+      dataNascimento: '01/01/1990',
+      cpf: '123.456.789-00',
+      endereco: 'Rua A, 123',
+      telefone: '(11) 1234-5678'
+    },
+    {
+      id: 2,
+      nome: 'Maria Souza',
+      dataNascimento: '02/02/1995',
+      cpf: '987.654.321-00',
+      endereco: 'Rua B, 456',
+      telefone: '(11) 2345-6789'
+    }
+  ]);
+
+  const [busca, setBusca] = useState('');
+
+  const handleInputChange = (event) => {
+    setBusca(event.target.value);
+  };
+
+  const filteredPacientes = pacientes.filter((paciente) => {
+    return paciente.nome.toLowerCase().includes(busca.toLowerCase()) || paciente.cpf.includes(busca);
+  });
+
+  return (
+    <div>
+      <h2>Consulta de Pacientes</h2>
+      <form>
+        <label htmlFor="busca">Buscar por Nome ou CPF:</label>
+        <input type="text" id="busca" name="busca" value={busca} onChange={handleInputChange} />
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>CPF</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredPacientes.map((paciente) => (
+            <tr key={paciente.id}>
+              <td>{paciente.id}</td>
+              <td>{paciente.nome}</td>
+              <td>{paciente.dataNascimento}</td>
+              <td>{paciente.cpf}</td>
+              <td>{paciente.endereco}</td>
+              <td>{paciente.telefone}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default Pacientes;
+
+
+TELA DE CONSULTAS:
+
+import { useState } from "react";
+
+function ConsultaDeConsultas() {
+  // lista de consultas agendadas
+  const [consultas, setConsultas] = useState([
+    {
+      id: 1,
+      paciente: "João Silva",
+      medico: "Dr. Carlos",
+      data: "10/05/2022",
+      horario: "14:30",
+    },
+    {
+      id: 2,
+      paciente: "Maria Souza",
+      medico: "Dr. Ana",
+      data: "15/05/2022",
+      horario: "16:00",
+    },
+    // adicione outras consultas aqui
+  ]);
+
+  // termo de pesquisa
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // função para filtrar consultas com base no termo de pesquisa
+  const filteredConsultas = consultas.filter(
+    (consulta) =>
+      consulta.paciente.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      consulta.medico.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <div>
+      <h1>Consultas agendadas</h1>
+      <input
+        type="text"
+        placeholder="Pesquisar paciente ou médico"
+        value={searchTerm}
+        onChange={(event) => setSearchTerm(event.target.value)}
+      />
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Paciente</th>
+            <th>Médico</th>
+            <th>Data</th>
+            <th>Horário</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredConsultas.map((consulta) => (
+            <tr key={consulta.id}>
+              <td>{consulta.id}</td>
+              <td>{consulta.paciente}</td>
+              <td>{consulta.medico}</td>
+              <td>{consulta.data}</td>
+              <td>{consulta.horario}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default ConsultaDeConsultas;
+
+
+TELA DE MEDICAMENTOS:
+
+import React, { useState } from 'react';
+
+function Medicamentos() {
+  const [medicamentos, setMedicamentos] = useState([]);
+
+  function adicionarMedicamento() {
+    const novoMedicamento = {
+      nome: '',
+      dosagem: '',
+      frequencia: ''
+    };
+    setMedicamentos([...medicamentos, novoMedicamento]);
+  }
+
+  return (
+    <div>
+      <h2>Lista de Medicamentos</h2>
+      <button onClick={adicionarMedicamento}>Adicionar Medicamento</button>
+      {medicamentos.map((medicamento, index) => (
+        <div key={index}>
+          <input type="text" placeholder="Nome" />
+          <input type="text" placeholder="Dosagem" />
+          <input type="text" placeholder="Frequência" />
+          <button>Remover Medicamento</button>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Medicamentos;
