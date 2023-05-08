@@ -1,0 +1,63 @@
+Curso de Engenharia de Software - UniEVANGÉLICA 
+Disciplina de Programação Web 
+Dev: Lucas Moraes Aguiar - 2012148 
+DATA: 08/05/2023
+
+
+Para inicializar o projeto com npm, express e nodemon, primeiro é necessário instalar o Node.js em seu computador. Depois disso, abra um terminal na pasta onde você deseja criar o projeto e execute os seguintes comandos:
+
+npm init -y
+Esse comando criará um arquivo package.json com as configurações padrão. Em seguida, instale as dependências do projeto com os seguintes comandos:
+
+npm install express
+npm install nodemon -D
+O Express é um framework para Node.js que facilita o desenvolvimento de aplicações web, enquanto o Nodemon é uma ferramenta que reinicia automaticamente o servidor sempre que o código é alterado.
+
+Agora, desenvolver os endpoints de um CRUD para o tema de horários e reservas de uma academia. Supondo que os dados de horários e reservas serão armazenados em um arquivo JSON, podemos criar os seguintes endpoints:
+
+const express = require('express');
+const app = express();
+
+const horarios = require('./horarios.json');
+const reservas = require('./reservas.json');
+
+app.use(express.json());
+
+// Listar horários
+app.get('/horarios', (req, res) => {
+  res.send(horarios);
+});
+
+// Listar reservas
+app.get('/reservas', (req, res) => {
+  res.send(reservas);
+});
+
+// Criar reserva
+app.post('/reservas', (req, res) => {
+  const novaReserva = req.body;
+  reservas.push(novaReserva);
+  res.send({ inputs: novaReserva });
+});
+
+// Atualizar reserva
+app.put('/reservas/:id', (req, res) => {
+  const id = req.params.id;
+  const reservaAtualizada = req.body;
+  reservas[id] = reservaAtualizada;
+  res.send({ inputs: reservaAtualizada });
+});
+
+// Deletar reserva
+app.delete('/reservas/:id', (req, res) => {
+  const id = req.params.id;
+  reservas.splice(id, 1);
+  res.send({ inputs: "Reserva deletada" });
+});
+
+app.listen(3000, () => {
+  console.log('Servidor iniciado na porta 3000');
+});
+Esse código define quatro endpoints: /horarios, /reservas, /reservas (POST), /reservas/:id (PUT) e /reservas/:id (DELETE). O endpoint /horarios e /reservas retornam uma lista estática de horários e reservas, respectivamente. O endpoint /reservas (POST) cria uma nova reserva com base nos dados recebidos no corpo da requisição e retorna esses dados em um objeto inputs. O endpoint /reservas/:id (PUT) atualiza a reserva com o ID especificado na URL com base nos dados recebidos no corpo da requisição e retorna esses dados em um objeto inputs. O endpoint /reservas/:id (DELETE) exclui a reserva com o ID especificado na URL e retorna uma mensagem informando que a reserva foi excluída.
+
+Agora você pode executar o servidor com o comando npm run dev e testar os endpoints utilizando uma ferramenta de teste de API, como o Postman ou Insomnia. Lembre-se de que esses endpoints estão usando dados estáticos em arquivos JSON e você precisará implementar a lógica de armazenamento e recuperação de dados em um banco de dados real em um ambiente de produção.
