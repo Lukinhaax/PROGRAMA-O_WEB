@@ -1,0 +1,53 @@
+Curso de Engenharia de Software - UniEVANGÉLICA 
+Disciplina de Programação Web 
+Dev: Lucas Moraes Aguiar - 2012148 
+DATA: 08/05/2023
+
+
+
+Endpoints:
+
+GET /horarios
+Retorna uma lista dos horários disponíveis para reserva na academia.
+
+GET /horarios/{id}
+Retorna as informações de um horário específico, incluindo a disponibilidade, a aula que será realizada e o instrutor responsável.
+
+POST /reservas
+Cria uma reserva para um horário específico na academia. Precisa receber o ID do horário, o nome do aluno que está fazendo a reserva e a forma de pagamento escolhida (boleto ou cartão de crédito).
+
+GET /reservas
+Retorna uma lista de todas as reservas feitas na academia, incluindo as informações do horário, do aluno e da forma de pagamento escolhida.
+
+GET /reservas/{id}
+Retorna as informações de uma reserva específica, incluindo as informações do horário, do aluno e da forma de pagamento escolhida.
+
+PUT /reservas/{id}
+Atualiza as informações de uma reserva específica, incluindo o nome do aluno e/ou a forma de pagamento escolhida.
+
+DELETE /reservas/{id}
+Cancela uma reserva específica na academia.
+
+Modelos de Dados:
+
+Horário:
+
+ID
+Dia da semana
+Horário de início
+Horário de término
+Disponibilidade (livre, reservado ou ocupado)
+Nome da aula
+Nome do instrutor
+Reserva:
+
+ID
+ID do horário reservado
+Nome do aluno
+Forma de pagamento (boleto ou cartão de crédito)
+Tecnologias utilizadas:
+
+Linguagem de programação: pode ser qualquer linguagem com suporte a desenvolvimento de APIs RESTful, como Python, Java, Ruby, etc.
+Framework de desenvolvimento: sugerimos o uso do Flask para Python ou Spring Boot para Java.
+Banco de dados: sugerimos o uso de um banco de dados relacional, como PostgreSQL ou MySQL, para armazenar as informações dos horários e das reservas.
+Com essa API REST, será possível gerenciar os horários e reservas da academia de forma eficiente e segura.
