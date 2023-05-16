@@ -1,0 +1,41 @@
+Curso de Engenharia de Software - UniEVANGÉLICA 
+Disciplina de Programação Web 
+Dev: Lucas Moraes Aguiar
+DATA: 15/05/2023
+
+ARP 02:
+
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+# Dados de exemplo para pacientes e agenda
+pacientes = []
+agenda = {}
+
+# API de Cadastro de Paciente
+@app.route('/api/pacientes', methods=['POST'])
+def cadastrar_paciente():
+    paciente = request.get_json()
+    pacientes.append(paciente)
+    return jsonify({'message': 'Paciente cadastrado com sucesso!'})
+
+# API de Cadastro e Listagem de Agenda
+@app.route('/api/agenda', methods=['POST'])
+def cadastrar_agenda():
+    data = request.json['data']
+    horarios = request.json['horarios']
+    agenda[data] = horarios
+    return jsonify({'message': 'Agenda cadastrada com sucesso!'})
+
+@app.route('/api/agenda', methods=['GET'])
+def listar_agenda():
+    return jsonify(agenda)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+Neste exemplo, usamos o framework Flask para criar as APIs. A primeira API, /api/pacientes, é usada para cadastrar um paciente. Ela espera receber uma requisição HTTP POST com os dados do paciente em formato JSON. Os pacientes são armazenados em uma lista chamada pacientes.
+
+A segunda API, /api/agenda, permite cadastrar e listar a agenda da academia. Ela também usa requisições POST e GET. Para cadastrar a agenda, a API espera receber uma requisição POST com os dados da data e dos horários disponíveis em formato JSON. Os dados da agenda são armazenados em um dicionário chamado agenda, onde a chave é a data e o valor é uma lista de horários.
+
+A requisição GET para /api/agenda retorna a agenda completa em formato JSON.
