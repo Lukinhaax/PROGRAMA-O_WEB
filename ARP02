@@ -5,37 +5,104 @@ DATA: 15/05/2023
 
 ARP 02:
 
-from flask import Flask, jsonify, request
+Cadastro de paciente:
 
-app = Flask(__name__)
+{
+  "nome": "Nome do Paciente",
+  "idade": 30,
+  "sexo": "Masculino",
+  "email": "exemplo@email.com",
+  "telefone": "1234567890",
+  ...
+}
 
-# Dados de exemplo para pacientes e agenda
-pacientes = []
-agenda = {}
+Response:
 
-# API de Cadastro de Paciente
-@app.route('/api/pacientes', methods=['POST'])
-def cadastrar_paciente():
-    paciente = request.get_json()
-    pacientes.append(paciente)
-    return jsonify({'message': 'Paciente cadastrado com sucesso!'})
 
-# API de Cadastro e Listagem de Agenda
-@app.route('/api/agenda', methods=['POST'])
-def cadastrar_agenda():
-    data = request.json['data']
-    horarios = request.json['horarios']
-    agenda[data] = horarios
-    return jsonify({'message': 'Agenda cadastrada com sucesso!'})
+{
+  "id": 1,
+  "nome": "Nome do Paciente",
+  "idade": 30,
+  "sexo": "Masculino",
+  "email": "exemplo@email.com",
+  "telefone": "1234567890",
+  ...
+}
 
-@app.route('/api/agenda', methods=['GET'])
-def listar_agenda():
-    return jsonify(agenda)
 
-if __name__ == '__main__':
-    app.run(debug=True)
-Neste exemplo, usamos o framework Flask para criar as APIs. A primeira API, /api/pacientes, é usada para cadastrar um paciente. Ela espera receber uma requisição HTTP POST com os dados do paciente em formato JSON. Os pacientes são armazenados em uma lista chamada pacientes.
+Cadastro de agenda:
 
-A segunda API, /api/agenda, permite cadastrar e listar a agenda da academia. Ela também usa requisições POST e GET. Para cadastrar a agenda, a API espera receber uma requisição POST com os dados da data e dos horários disponíveis em formato JSON. Os dados da agenda são armazenados em um dicionário chamado agenda, onde a chave é a data e o valor é uma lista de horários.
+{
+  "data": "2023-05-16",
+  "hora": "14:30",
+  "pacienteId": 1,
+  "descricao": "Descrição do compromisso",
+  ...
+}
 
-A requisição GET para /api/agenda retorna a agenda completa em formato JSON.
+Response:
+
+
+{
+  "id": 1,
+  "data": "2023-05-16",
+  "hora": "14:30",
+  "pacienteId": 1,
+  "descricao": "Descrição do compromisso",
+  ...
+}
+
+    Listar todos os compromissos da agenda:
+    Endpoint: GET /api/agenda/compromissos
+    Response:
+
+
+{
+  "compromissos": [
+    {
+      "id": 1,
+      "data": "2023-05-16",
+      "hora": "14:30",
+      "pacienteId": 1,
+      "descricao": "Descrição do compromisso",
+      ...
+    },
+    {
+      "id": 2,
+      "data": "2023-05-17",
+      "hora": "10:00",
+      "pacienteId": 2,
+      "descricao": "Outra descrição do compromisso",
+      ...
+    },
+    ...
+  ]
+}
+
+    Listar os compromissos de um paciente específico:
+    Endpoint: GET /api/agenda/compromissos?pacienteId=1
+    Response:
+
+
+{
+  "compromissos": [
+    {
+      "id": 1,
+      "data": "2023-05-16",
+      "hora": "14:30",
+      "pacienteId": 1,
+      "descricao": "Descrição do compromisso",
+      ...
+    },
+    {
+      "id": 3,
+      "data": "2023-05-18",
+      "hora": "11:00",
+      "pacienteId": 1,
+      "descricao": "Outra descrição do compromisso do mesmo paciente",
+      ...
+    },
+    ...
+  ]
+}
+
